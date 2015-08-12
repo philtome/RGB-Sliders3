@@ -27,6 +27,11 @@ class ViewController: UIViewController {
         colorSquare.layer.borderColor = UIColor.blackColor().CGColor
         colorSquare.layer.borderWidth = 1
         
+        let defaults = NSUserDefaults.standardUserDefaults()
+        redSlider.value = defaults.floatForKey("redSaved")
+        greenSlider.value = defaults.floatForKey("greenSaved")
+        blueSlider.value = defaults.floatForKey("blueSaved")
+        
         updateBackgroundColor()
         
         
@@ -51,6 +56,12 @@ class ViewController: UIViewController {
         let blueValue = CGFloat(blueSlider.value)
         
         colorSquare.backgroundColor = UIColor(red: redValue, green: greenValue, blue: blueValue, alpha: 1)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()  //1
+        defaults.setFloat(redSlider.value, forKey: "redSaved")   //2
+        defaults.setFloat(greenSlider.value, forKey: "greenSaved")
+        defaults.setFloat(blueSlider.value, forKey: "blueSaved")
+        defaults.synchronize()    //3
     }
 
     
