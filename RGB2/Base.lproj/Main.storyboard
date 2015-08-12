@@ -50,7 +50,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MuO-g7-u37" kind="show" id="Nfl-Ck-3Bv"/>
+                                    <segue destination="MuO-g7-u37" kind="show" identifier="openColor" id="Nfl-Ck-3Bv"/>
                                 </connections>
                             </button>
                         </subviews>

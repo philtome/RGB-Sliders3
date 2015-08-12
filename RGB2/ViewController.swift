@@ -18,6 +18,7 @@ class ViewController: UIViewController {
   
     @IBOutlet weak var colorSquare: UIView!
     
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -27,12 +28,22 @@ class ViewController: UIViewController {
         colorSquare.layer.borderWidth = 1
         
         updateBackgroundColor()
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "openColor") {
+            let newViewController = segue.destinationViewController as! UIViewController
+            newViewController.view.backgroundColor = colorSquare.backgroundColor
+        }}
+    
     @IBAction func updateBackgroundColor() {
         
         let redValue = CGFloat(redSlider.value)
