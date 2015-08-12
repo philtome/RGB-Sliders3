@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Lusah. All rights reserved.
 //
 // Commet added
-// Added another comment
+
 
 import UIKit
 
